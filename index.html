@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    
+    <title>Self-driving Fraction</title>
+    
+    <!-- 구글 맵스를 위해 불러온 링크 -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- chart.js를 위해 불러온 링크 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- 웹사이트 전체의 스타일 정의 -->
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <!-- <script type="module" src="./index.js"></script> -->
+  </head>
+  <body>
+    <!-- div의 높이를 설정하지 않았기 때문에, css 파일로 지정해주어야 한다. -->
+    <div id="map">
+      <!-- API 키를 통해 Google Maps를 불러옴-->
+      <script 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw8r1Zj1oP2w-03uHO7hn7__j2436bdFg&callback=initMap&v=weekly"
+        defer
+      ></script>
+    </div>
+    <!-- chartjs를 통해 차트를 생성하는 파트 -->
+    <div class="chartjs">
+      <!-- 물의 탁도 그래프 -->
+      <canvas id="myWaterTurbChart">
+        <script src="./water_graph.js" defer></script>
+      </canvas>
+      <!-- 수온 그래프 -->
+      <canvas id="myWaterTempChart">
+        <script src="./water_graph.js" defer></script>
+      </canvas>
+      <button id="UpdateData">Data Update</button>
+      <button id="RemoveData">Data Remove</button>
+      <!-- <button id="StopAuto">Stop</button> -->
+    </div>
+  </body>
+</html>
